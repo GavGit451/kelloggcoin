@@ -17,26 +17,28 @@ blockchain = [
   { "from_user" => "anthony", "to_user" => "evan", "amount" => 1750 }
 ]
 
+Ben_start_bal = blockchain[0]["amount"]
+Brian_start_bal = blockchain[1]["amount"]
 
-# puts blockchain[3]["to_user"]
-# puts blockchain[3]["amount"]
+Ben_end_bal = Ben_start_bal - blockchain[2]["amount"] - blockchain[5]["amount"] + blockchain[6]["amount"]
+Brian_end_bal = Brian_start_bal - blockchain[3]["amount"]
+Evan_end_bal = blockchain[2]["amount"] - blockchain[4]["amount"] + blockchain[7]["amount"]
+Ant_end_bal = blockchain[3]["amount"] + blockchain[4]["amount"] + blockchain[5]["amount"] - blockchain[6]["amount"] - blockchain[7]["amount"]
 
-from = blockchain[3]["from_user"]
-puts from
 
-to = blockchain[3]["to_user"]
-puts to
+# from = blockchain[3]["from_user"]
+# puts from
 
-amount = blockchain[3]["amount"]
-puts amount
+# to = blockchain[3]["to_user"]
+# puts to
 
+# amount = blockchain[3]["amount"]
+# puts amount
 
 
 # puts blockchain[3]["from_user"]
 # puts blockchain[3]["to_user"]
 # puts blockchain[3]["amount"]
-
-  
 
 
 # Write code below that returns the number of KelloggCoin that each user has in their 
@@ -51,4 +53,11 @@ puts amount
 # 👇👇👇 Your code HERE 👇👇👇
 
 
+puts "Ben's KelloggCoin balnce is #{Ben_end_bal}"
+puts "Brian's KelloggCoin balnce is #{Brian_end_bal}"
+puts "Evan's KelloggCoin balnce is #{Evan_end_bal}"
+puts "Anthony's KelloggCoin balnce is #{Ant_end_bal}"
 
+# if blockchain[2]["from_user"] = "ben"
+#   puts blockchain[2]["amount"]
+# end
