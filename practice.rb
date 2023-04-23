@@ -17,6 +17,28 @@ blockchain = [
   { "from_user" => "anthony", "to_user" => "evan", "amount" => 1750 }
 ]
 
+
+# puts blockchain[3]["to_user"]
+# puts blockchain[3]["amount"]
+
+from = blockchain[3]["from_user"]
+puts from
+
+to = blockchain[3]["to_user"]
+puts to
+
+amount = blockchain[3]["amount"]
+puts amount
+
+
+
+# puts blockchain[3]["from_user"]
+# puts blockchain[3]["to_user"]
+# puts blockchain[3]["amount"]
+
+  
+
+
 # Write code below that returns the number of KelloggCoin that each user has in their 
 # KelloggCoin "wallet".
 
@@ -27,3 +49,6 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+
+
+
