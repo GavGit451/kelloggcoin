@@ -17,14 +17,61 @@ blockchain = [
   { "from_user" => "anthony", "to_user" => "evan", "amount" => 1750 }
 ]
 
-Ben_start_bal = blockchain[0]["amount"]
-Brian_start_bal = blockchain[1]["amount"]
+# Ben_start_bal = blockchain[0]["amount"]
+# Brian_start_bal = blockchain[1]["amount"]
 
-Ben_end_bal = Ben_start_bal - blockchain[2]["amount"] - blockchain[5]["amount"] + blockchain[6]["amount"]
-Brian_end_bal = Brian_start_bal - blockchain[3]["amount"]
-Evan_end_bal = blockchain[2]["amount"] - blockchain[4]["amount"] + blockchain[7]["amount"]
-Ant_end_bal = blockchain[3]["amount"] + blockchain[4]["amount"] + blockchain[5]["amount"] - blockchain[6]["amount"] - blockchain[7]["amount"]
+# ben_end_bal = Ben_start_bal - blockchain[2]["amount"] - blockchain[5]["amount"] + blockchain[6]["amount"]
+# brian_end_bal = Brian_start_bal - blockchain[3]["amount"]
+# evan_end_bal = blockchain[2]["amount"] - blockchain[4]["amount"] + blockchain[7]["amount"]
+# ant_end_bal = blockchain[3]["amount"] + blockchain[4]["amount"] + blockchain[5]["amount"] - blockchain[6]["amount"] - blockchain[7]["amount"]
 
+# 1. # default 0 balance - for everyone
+
+ben_end_bal = 0
+brian_end_bal = 0
+evan_end_bal  = 0
+ant_end_bal = 0
+
+# 2. loop through each blockchain transaction
+
+for transaction in blockchain
+#  puts "#{transaction}"
+
+  if transaction["from_user"]=="ben"
+    ben_end_bal = ben_end_bal - transaction["amount"]
+
+  elsif transaction["from_user"]=="brian"
+    brian_end_bal = brian_end_bal - transaction["amount"]
+
+  elsif transaction["from_user"]=="evan"
+    evan_end_bal = evan_end_bal - transaction["amount"]
+
+  elsif transaction["from_user"]=="anthony"
+    ant_end_bal = ant_end_bal - transaction["amount"]
+
+  end
+
+  if transaction["to_user"]=="ben"
+    ben_end_bal = ben_end_bal + transaction["amount"]
+
+  elsif transaction["to_user"]=="brian"
+    brian_end_bal = brian_end_bal + transaction["amount"]
+
+  elsif transaction["to_user"]=="evan"
+    evan_end_bal = evan_end_bal + transaction["amount"]
+
+  elsif transaction["to_user"]=="anthony"
+    ant_end_bal = ant_end_bal + transaction["amount"]
+
+  end
+
+end
+
+# 3. in the loop, if from someone(x) remove from balance
+
+# 4. in the loop, if TO someone add to balance
+
+# 5. move from money, to money, and display end balances
 
 # from = blockchain[3]["from_user"]
 # puts from
@@ -53,10 +100,15 @@ Ant_end_bal = blockchain[3]["amount"] + blockchain[4]["amount"] + blockchain[5][
 # 👇👇👇 Your code HERE 👇👇👇
 
 
-puts "Ben's KelloggCoin balnce is #{Ben_end_bal}"
-puts "Brian's KelloggCoin balnce is #{Brian_end_bal}"
-puts "Evan's KelloggCoin balnce is #{Evan_end_bal}"
-puts "Anthony's KelloggCoin balnce is #{Ant_end_bal}"
+puts "Ben's KelloggCoin balnce is #{ben_end_bal}"
+puts "Brian's KelloggCoin balnce is #{brian_end_bal}"
+puts "Evan's KelloggCoin balnce is #{evan_end_bal}"
+puts "Anthony's KelloggCoin balnce is #{ant_end_bal}"
+
+balances = [ben_end_bal, brian_end_bal, evan_end_bal, ant_end_bal]
+for balance in balances
+  puts "KelloggCoin balance is #{balance}"
+end
 
 # if blockchain[2]["from_user"] = "ben"
 #   puts blockchain[2]["amount"]
