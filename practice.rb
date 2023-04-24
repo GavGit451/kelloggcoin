@@ -105,6 +105,9 @@ puts "Brian's KelloggCoin balnce is #{brian_end_bal}"
 puts "Evan's KelloggCoin balnce is #{evan_end_bal}"
 puts "Anthony's KelloggCoin balnce is #{ant_end_bal}"
 
+# - make an array of hashes, each has in array would have 2 keys 1 - persons name 2 - wallet, then for loop - go through that array, display balance square bracket name
+#balance[wallet]
+
 balances = [ben_end_bal, brian_end_bal, evan_end_bal, ant_end_bal]
 for balance in balances
   puts "KelloggCoin balance is #{balance}"
